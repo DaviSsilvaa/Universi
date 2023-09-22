@@ -74,7 +74,7 @@ body {
     background-color: #fff;
     font-size: 18px;
     outline: none;
-    box-shadow: 0 0 px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0px rgba(0, 0, 0, 0.2);
 
 }
 
@@ -130,24 +130,21 @@ body {
 }
 
 
-.Quadrado{
-  width: 2000px;
-  height: 3000px;
-  opacity: 1;
-  background-color: #e1e1e1;
-  border: 8px solid rgb(235, 235, 235);
-  border-radius: 50px 50px;
-  border-style: double;
-  position: absolute;
-  top: 300px;
-  left: 280px;
-  z-index: 0;
-  filter: blur(1px);
-  box-shadow: 15px 5px 14px rgba(0, 0, 0, 0.5);
-  
- 
-  
-}
+/*.Quadrado{*/
+/*  width: 2000px;*/
+/*  height: 3000px;*/
+/*  opacity: 1;*/
+/*  background-color: #e1e1e1;*/
+/*  border: 8px solid rgb(235, 235, 235);*/
+/*  border-radius: 50px 50px;*/
+/*  border-style: double;*/
+/*  position: absolute;*/
+/*  top: 300px;*/
+/*  left: 280px;*/
+/*  z-index: 0;*/
+/*  filter: blur(1px);*/
+/*  box-shadow: 15px 5px 14px rgba(0, 0, 0, 0.5);*/
+/*}*/
 
 body {
   margin: 0;
