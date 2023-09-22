@@ -7,7 +7,7 @@ const Feed = () =>{
     return (
         <div className= "feed-container">
             {posts.map((post) => (
-                <FeedItem postText={post.text} key={post.postId}/>))}
+                <FeedItem postTittle={post.tittle} postText={post.text} key={post.postId}/>))}
         </div>
     )
 }
