@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import FeedAxios from "./containers/FeedAxios";
+import PostForms from "./containers/PostForms";
 
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
       
 
       </header>
+        <PostForms/>
         <FeedAxios/>
         <button className="custom-button">Search</button>
       <div className="Quadrado"></div>
