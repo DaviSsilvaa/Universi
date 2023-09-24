@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Feed from "./containers/Feed.tsx";
+import FeedAxios from "./containers/FeedAxios";
 
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
       
 
       </header>
-        <Feed/>
+        <FeedAxios/>
         <button className="custom-button">Search</button>
       <div className="Quadrado"></div>
     </div>
