@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import FeedAxios from "./containers/FeedAxios";
+import FeedAxios from "./containers/FeedAxios/FeedAxios.js";
 import PostForms from "./containers/PostForms";
 
 

@@ -1,0 +1,53 @@
+.new-post {
+    background-color: #eff1f5;
+    padding: 24px;
+    height: 260px;
+    width: 460px;
+    border-radius: 24px;
+    display: block; /* Necessário para o margin funcionar */
+    margin-left: auto; /* aqui */
+    margin-right: auto;
+}
+
+.post {
+    text-align: center;
+    font-size: 34px;
+    margin: 0 auto;
+
+    background-color: #eff1f5;
+
+    padding: 30px 40px;
+    width: 600px;
+
+    border-radius: 7px;
+    margin-top: 40px;
+}
+
+.btns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.btns button {
+    color: rgba(255, 255, 255, 0.938);
+    font-size: 1.3rem;
+    border: 0;
+
+    border-radius: 10px;
+
+    font-family: Heebo;
+    font-weight: 700;
+    
+    cursor: pointer;
+
+    padding: 7px 60px;
+}
+
+.btn-edit button{
+    background-color: #80D8FF;
+}
+
+.btn-delete button{
+    background-color: rgb(241, 45, 45);
+}

@@ -1,5 +1,6 @@
 import { useState, useEffect} from "react";
 import axios from "axios";
+import './FeedAxios.css'
 
 const FeedAxios= () => {
 
@@ -26,11 +27,20 @@ const FeedAxios= () => {
     return (
         <div>
             <h2>Posts</h2>
-            {post.length === 0 ? (<p>carregando</p>) : (
+            {post.length === 0 ? (<p>Carregando...</p>) : (
                 post.map((post) => (
                     <div className='post' key={post.id}>
-                        <h2>{post.title}</h2>
                         <p>{post.message}</p>
+
+                        <div className="btns">
+                            <div className="btn-edit">
+                                <button>Editar</button>
+                            </div>
+
+                            <div className="btn-delete">
+                            <button>Deletar</button>
+                            </div>
+                        </div>
                     </div>
                 ))
             )}
