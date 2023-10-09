@@ -1,16 +1,14 @@
 import React from 'react';
 import './App.css';
-import Feed from "./containers/Feed.tsx";
+import FeedAxios from './containers/FeedAxios.js'
 
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-
-      
-
       </header>
+      <FeedAxios/>
     </div>
   );
 

@@ -1,3 +1,5 @@
+import React from "react";
+
 type PostProps = {
     postText: string;
     postTittle: string

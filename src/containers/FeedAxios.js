@@ -29,7 +29,6 @@ const FeedAxios= () => {
             {post.length === 0 ? (<p>carregando</p>) : (
                 post.map((post) => (
                     <div className='post' key={post.id}>
-                        <h2>{post.title}</h2>
                         <p>{post.message}</p>
                     </div>
                 ))
