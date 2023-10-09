@@ -41,6 +41,7 @@ ul {
   list-style: none;
   padding: 0;
   margin: 0;
+  z-index: 10;
 }
 .container {
   padding-left: 15px;
@@ -96,7 +97,8 @@ ul {
   text-transform: uppercase;
   font-size: 40px;
   position: fixed;
-  left: 22vw;
+  left: 17vw;
+  z-index: 10;
 }
 
 .Square2{
@@ -105,10 +107,10 @@ height: 100px;
 background-color: rgb(247, 247, 247);
 position: fixed;
 top: 0vw;
-left: 14vw;
-z-index: -1;
+left: 12vw;
+z-index: 5;
 border-radius: 0px 0px 20px 20px;
-box-shadow: 3px 6px 14px black;
+box-shadow: 2px 3px 15px black;
 
 }
 
@@ -188,17 +190,27 @@ box-shadow: 3px 6px 14px black;
   cursor: pointer;
   color: #FFF;
   background-color: #ce7c11;
+  
 }
 
 .form-control{
-  border-radius: 20px;
-  border: solid rgba(99, 99, 99, 0.288);
-  width: 400px;
-  height: 40px;
   position: fixed;
-  right: 50vw;
-  text-align: center;
-  font-weight: bold;
+  left: 29vw;
+  width: 500px;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  padding: 1em;
+  background-color: #ccc;
+  box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
+  transition: 300ms ease-in-out;
+}
+
+.form-control:focus{
+  background-color: rgb(235, 233, 233);
+  transform: scale(1.05);
+  box-shadow: 13px 13px 100px #969696,
+             -13px -13px 100px #ffffff;
 }
 
 .navbar{
@@ -211,20 +223,39 @@ box-shadow: 3px 6px 14px black;
   position: absolute;
   top: 1.6%;
   right: 46.4%;
-  
+  z-index: 10;
 }
 
 
 .btn{
-  width: 100px;
-  height: 40px;
-  border-radius: 30px;
-  border: solid #ce7c11;
-  background-color: #ce7c11;
   position: fixed;
-  left: 50vw;
+  width: 110px;
+  top: -0vw;
+  left: 49vw;
+  height: 50px;
+  display: inline-block;
+  margin: 15px;
+  padding: 12px 20px;
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #000000;
+  background: transparent;
+  cursor: pointer;
+  transition: ease-out 0.5s;
+  border: 2px solid #bb8d0f;
+  border-radius: 30px;
+  box-shadow: inset 0 0 0 0 #cf7702;
+}
+
+.btn:hover{
   color: white;
-  font-weight: bolder;
+  box-shadow: inset 0 -100px 0 0 #e48212;
+}
+
+.btn:active{
+  transform: scale(0.9);
 }
 
 .landing-page .content .image img {
@@ -235,10 +266,24 @@ box-shadow: 3px 6px 14px black;
 
 .Square{
   position: relative;
-  left: 8vw;
+  left: 14vw;
   top: -90vh;
-  width: 2200px;
-  height: 4000px;
+  width: 1800px;
+  height: 1000px;
+  z-index: -1;
+  background-color: rgb(255, 255, 255);
+  border: 2px solid rgba(0, 0, 0, 0.299);
+  box-shadow: 1px 3px 14px;
+  border-radius: 40px;
+
+}
+
+.Square3{
+  position: relative;
+  left: 28vw;
+  top: -87vh;
+  width: 1000px;
+  height: 1400px;
   z-index: -1;
   background-color: rgb(255, 255, 255);
   filter: blur(0px);
@@ -247,6 +292,150 @@ box-shadow: 3px 6px 14px black;
   border-radius: 40px;
 
 }
+
+
+.card {
+  width: 350px;
+  height: 500px;
+  position: relative;
+  top: -98vw;
+  right: 29vw;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 26px;
+  z-index: 1;
+  box-shadow: -2px 2px 10px;
+ }
+ 
+ .tools {
+  display: flex;
+  align-items: center;
+  padding: 9px;
+ }
+ 
+ .circle {
+  padding: 0 4px;
+ }
+ 
+ .box {
+  display: inline-block;
+  align-items: center;
+  width: 10px;
+  height: 10px;
+  padding: 1px;
+  border-radius: 50%;
+ }
+
+.NomeUser{
+  text-align: center;
+  position: relative;
+  top: 4vw;
+  color: #636060;
+  font-weight: 200;
+}
+
+.UserImage{
+  position: relative;
+  left: 4vw;
+  top: 3vw;
+}
+
+
+.Skill{
+  text-align: center;
+  position: relative;
+  letter-spacing: -1px;
+  top: 4.3vw;
+  color: #646262;
+}
+
+.circle{
+  position: relative;
+  top: -12.4vw;
+}
+ 
+ .red {
+  background-color: #ff605c;
+ }
+ 
+ .yellow {
+  background-color: #ffbd44;
+ }
+ 
+ .green {
+  background-color: #00ca4e;
+ }
+ 
+
+
+.AreaShare{
+  float: left;
+  background-color: solid 0.5px #9db3c8;
+  border: solid 1px;
+  border-radius: 20px;
+  padding-left: 10px;
+  font-size: 12pt;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  height:50px;
+  width: 450px;
+  margin-top: 40px;
+  position: relative;
+  left: 10vw;
+}
+
+.UploadForMidia{
+  position: relative;
+  top: -117vw;
+  left: 29vw;
+}
+
+.ButtonVip{
+  position:relative;
+  left: 3.9vw;
+  top: 4.4vw;
+}
+
+.buttonVip{
+  width: 6.5em;
+  height: 2.3em;
+  margin: 0.5em;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 0.625em;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.buttonVip:hover{
+  color: black;
+}
+
+.buttonVip::after{
+  content: "";
+  background: white;
+  position: absolute;
+  z-index: -1;
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+  transition: all 0.5s;
+}
+
+
+.buttonVip:hover::after{
+  transform: skewX(-45deg) scale(1, 1);
+ -webkit-transition: all 0.5s;
+ transition: all 0.5s;
+}
+
+
 
 /* End Landing Page */
 .App-link {
