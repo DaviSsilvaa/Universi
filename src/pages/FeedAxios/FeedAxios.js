@@ -1,6 +1,7 @@
 import { useState, useEffect} from "react";
+import { Link } from 'react-router-dom';
 import axios from "axios";
-import './FeedAxios.css'
+import './FeedAxios.css';
 
 const FeedAxios= () => {
 
@@ -24,9 +25,20 @@ const FeedAxios= () => {
         getPosts()
     }, []);
 
+    function deletePost(id) {
+        
+        axios.delete(`http://localhost:8080/api/posts/${id}`)
+        setPost(post.filter(post => post._id !== id ))
+    }
+
     return (
         <div>
-            <h2>Posts</h2>
+            <div className="btn-newPost">
+                <Link to='/post'>
+                    <button>Adicionar novo post</button>
+                </Link>
+            </div>
+
             {post.length === 0 ? (<p>Carregando...</p>) : (
                 post.map((post) => (
                     <div className='post' key={post.id}>
@@ -34,11 +46,15 @@ const FeedAxios= () => {
 
                         <div className="btns">
                             <div className="btn-edit">
-                                <button>Editar</button>
+                                <Link to={{ pathname: `/edit/${post.id}` }}>
+                                    <button>Editar</button>
+                                </Link>
                             </div>
 
                             <div className="btn-delete">
-                            <button>Deletar</button>
+                                <Link to='/'>
+                                    <button onClick={() => deletePost(post.id) }>Deletar</button>
+                                </Link>
                             </div>
                         </div>
                     </div>

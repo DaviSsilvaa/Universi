@@ -51,3 +51,19 @@
 .btn-delete button{
     background-color: rgb(241, 45, 45);
 }
+
+.btn-newPost button{
+    font-size: 1.2rem;
+    font-family: Heebo;
+    font-weight: 700;
+
+    background-color: #18aacaec;
+    border: 0;
+
+    color: #fff;
+
+    padding: 10px 20px;
+    border-radius: 10px;
+
+    cursor: pointer;
+}

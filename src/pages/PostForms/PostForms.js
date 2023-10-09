@@ -1,6 +1,8 @@
 import blogFetch from 'axios';
 import axios from "axios";
 import {useState} from "react";
+import { Link } from 'react-router-dom'
+import './PostForms.css'
 
 
 const PostForms = () => {
@@ -29,6 +31,11 @@ const PostForms = () => {
             </div>
             <input type='submit' value='criar post' className='button'/>
         </form>
+        <div className='btn-back'>
+            <Link to='/'>
+                <button>Voltar para o feed</button>
+            </Link>
+        </div>
     </div>
     )
 }
