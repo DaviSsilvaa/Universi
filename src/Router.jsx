@@ -7,7 +7,7 @@ export function Router() {
     return(
         <BrowserRouter>
             <Routes>
-                <Route path='/' element={<FeedAxios/>}/>
+                <Route path='/' element={<FeedAxios/>}/> 
                 <Route path='/post' element={<PostForms/>}/>
                 <Route path='/edit/:changeId' element={<EditPost/>}/>
             </Routes>

@@ -1,7 +1,7 @@
 import blogFetch from 'axios';
 import axios from "axios";
 import {useState} from "react";
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import './PostForms.css'
 
 
@@ -9,12 +9,16 @@ const PostForms = () => {
 
 //    const [postTitle, setPostTitle] = useState()
     const [postMessage, setPostMessage] = useState()
+    const navigate = useNavigate(); // Use useNavigate para navegação
 
     const creatPost = async (e) => {
         e.preventDefault();
 
         const post = {postMessage}
         await axios.post('http://localhost:8080/api/posts', post)
+        
+        // Após a postagem bem-sucedida, redirecione para a página inicial
+        navigate('/');
     }
 
     return (
