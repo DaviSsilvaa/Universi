@@ -29,6 +29,7 @@ const FeedAxios= () => {
         
         axios.delete(`http://localhost:8080/api/posts/${id}`)
         setPost(post.filter(post => post._id !== id ))
+        window.location.reload();
     }
 
     return (
