@@ -1,5 +1,5 @@
 import { useState, useEffect} from "react";
-import { Link } from 'react-router-dom';
+import { Link, resolvePath } from 'react-router-dom';
 import axios from "axios";
 import './FeedAxios.css';
 
@@ -13,6 +13,7 @@ const FeedAxios= () => {
             const response = await axios.get('http://localhost:8080/api/posts')
 
             const data = response.data
+            console.log(response)
             setPost(data)
 
         } catch (e){
@@ -59,7 +60,9 @@ const FeedAxios= () => {
                             </div>
                         </div>
                         <div className="see-comments">
-                            <Link to='/comments' className="see-comments">Ver todos os comentários</Link>
+                            <Link to={{pathname: `/comments/${post.id}`}} className="see-comments">
+                                Ver todos os comentários
+                            </Link>
                         </div>
                     </div>
                 ))
