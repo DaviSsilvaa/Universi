@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import FeedAxios from './pages/FeedAxios/FeedAxios.js';
-import EditPost from './pages/EditPost.js';
+import EditPost from './pages/EditPost/EditPost.js';
 import PostForms from './pages/PostForms/PostForms.js'
 import Comment from './pages/Comment/Comment.js';
 
