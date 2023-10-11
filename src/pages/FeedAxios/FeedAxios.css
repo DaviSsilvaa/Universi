@@ -67,3 +67,12 @@
 
     cursor: pointer;
 }
+
+.see-comments{
+    font-size: 1rem;
+    font-weight: 700;
+    color:#727171;
+    text-decoration: none;
+    
+    padding-top: 3%;
+}

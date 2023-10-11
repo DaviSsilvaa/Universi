@@ -58,6 +58,9 @@ const FeedAxios= () => {
                                 </Link>
                             </div>
                         </div>
+                        <div className="see-comments">
+                            <Link to='/comments' className="see-comments">Ver todos os comentários</Link>
+                        </div>
                     </div>
                 ))
             )}
