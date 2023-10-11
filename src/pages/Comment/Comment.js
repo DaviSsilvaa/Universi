@@ -7,11 +7,9 @@ const Comment = () => {
 
     //TODO:Check to allow only valid postId to load the page
     //TODO:Create a function that breaks a line of a string. 
-
     const {postId} = useParams();
-
-    //State for the post message
     const [post, setPost] = useState("");
+    const [commentText, setCommentText] = useState("");
 
     //Function to getPosts
     const getPosts = async() => {
@@ -27,6 +25,16 @@ const Comment = () => {
         }
     }
 
+    const submitComment = async() => {
+        const commentObj = {
+            postID: postId,
+            comment: commentText
+        }
+        console.log(commentObj);
+        await axios.post('http://localhost:8080/api/posts/comments', commentObj)
+
+    }
+
 
     useEffect(() => {
         getPosts();
@@ -36,16 +44,35 @@ const Comment = () => {
     return (
         <div>
             <p>Post</p>
+
             <div className="post">
                 <div className="textContainer">
                     {post}
                 </div>
             </div>
-            <p>Todos comentários: </p>
 
-            <h1>Pretend this is the input for insert a comment</h1>
-            <h1>Pretend this is listing all comments</h1>
-            <h1>The id of your post: {postId}</h1>
+            <p>Adicionar comentário</p>
+
+            <div className="comment-input">
+                <div className="text-area">
+
+                    <textarea 
+                    placeholder="Faça um comentário!" id="text-area" 
+                    onChange={(event) => setCommentText(event.target.value)}
+                    />
+
+                </div>
+                <div className="submit-button">
+
+                    <button id="submit" onClick={() => submitComment()}>Enviar comentário</button>
+
+                </div>
+            </div>
+
+
+
+            <h3>Pretend this is listing all comments</h3>
+            <h3>The id of your post: {postId}</h3>
             <Link to="/">Click to go back to the main page</Link>
         </div>
     );
