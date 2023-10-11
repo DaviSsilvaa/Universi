@@ -1,0 +1,18 @@
+.post {
+    text-align: center;
+    font-size: 34px;
+    margin: 0 auto;
+
+    background-color: #eff1f5;
+
+    padding: 30px 40px;
+    width: 600px;
+
+    border-radius: 7px;
+    margin-top: 40px;
+}
+
+.text-conteiner{
+    white-space: pre-line;
+    text-align: justify;
+}

@@ -13,7 +13,6 @@ const FeedAxios= () => {
             const response = await axios.get('http://localhost:8080/api/posts')
 
             const data = response.data
-            console.log(response)
             setPost(data)
 
         } catch (e){
