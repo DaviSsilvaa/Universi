@@ -2,6 +2,7 @@ import { useState, useEffect} from "react";
 import { Link } from 'react-router-dom';
 import axios from "axios";
 import './FeedAxios.css';
+import Swal from 'sweetalert2';
 
 const FeedAxios= () => {
 
@@ -32,6 +33,22 @@ const FeedAxios= () => {
         window.location.reload();
     }
 
+    const handleClick = (post) => {
+        Swal.fire({
+            title: 'Você tem certeza que quer apagar o post?',
+            text: "Você não poderá reveter isso!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sim, apague o post!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+                deletePost(post.id);
+            }
+          })
+    }
+
     return (
         <div>
             <div className="btn-newPost">
@@ -54,7 +71,7 @@ const FeedAxios= () => {
 
                             <div className="btn-delete">
                                 <Link to='/'>
-                                    <button onClick={() => deletePost(post.id) }>Deletar</button>
+                                    <button onClick={() => handleClick(post)}>Deletar</button>
                                 </Link>
                             </div>
                         </div>
