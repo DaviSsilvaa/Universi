@@ -1,0 +1,42 @@
+textarea {
+    width: 100%;
+    border-radius: 10px;
+    border: 0;
+    outline: 0;
+
+    font-size: 1.2rem;
+
+    padding-left: 15px;
+
+    height: 190px;
+    resize: none;
+
+    padding-top: 10px;
+    
+    justify-content: center;
+    align-items: center;
+}
+
+.new-post {
+    position: absolute;
+    left: 40vw;
+    top: 890px;
+    margin-top: 300px;
+    background-color: rgb(217, 217, 217);
+    box-shadow: -15px 15px 19px rgba(52, 52, 52, 0.575);
+    padding: 24px;
+    height: 360px;
+    width: 490px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 24px;
+    display: block; /* Necessário para o margin funcionar */
+    margin-left: auto; /* aqui */
+    margin-right: auto;
+}
+
+.post{
+    position: relative;
+    top: 56vw;
+    
+}
+

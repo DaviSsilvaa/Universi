@@ -1,0 +1,179 @@
+
+.new-post {
+    background-color: #eff1f5;
+    padding: 24px;
+    height: 260px;
+    width: 460px;
+    border-radius: 24px;
+    display: block; /* Necessário para o margin funcionar */
+    margin-left: auto; /* aqui */
+    margin-right: auto;
+}
+
+.post {
+    text-align: center;
+    font-size: 34px;
+    margin: 0 auto;
+
+    background-color: #eff1f5;
+
+    padding: 30px 40px;
+    width: 600px;
+
+    border-radius: 7px;
+    margin-top: 40px;
+}
+
+.btns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.btns button {
+    color: rgba(255, 255, 255, 0.938);
+    font-size: 1.3rem;
+    border: 0;
+
+    border-radius: 10px;
+
+    font-family: Heebo;
+    font-weight: 700;
+    
+    cursor: pointer;
+
+    padding: 7px 20px;
+}
+
+.btn-edit button{
+    width: 150px;
+    height: 47px;
+    border: 3px solid #565656;
+    position: relative;
+    left: 5vw;
+    color: rgb(0, 0, 0);
+    border-radius: 30px;
+    transition: all 0.3s;
+    cursor: pointer;
+    background: rgb(255, 255, 255);
+    font-size: 1.em;
+    font-weight: 550;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btn-edit button:hover{
+    background: #517a15;
+    font-size: 0.7em;
+    color: white;
+}
+
+.btn-delete button {
+    width: 150px;
+    height: 47px;
+    border: 3px solid #565656;
+    position: relative;
+    right: 4vw;
+    color: black;
+    border-radius: 30px;
+    transition: all 0.3s;
+    cursor: pointer;
+    background: white;
+    font-size: 1.em;
+    font-weight: 550;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btn-delete button:hover{
+    background: #711919;
+    font-size: 0.7em;
+    color: white;
+}
+
+.BoxPostUser{
+    position: relative;
+    background-color: rgb(210, 210, 210);
+    border-radius: 45px;
+    height: 200px;
+    
+}
+
+.ContentPost{
+    position: relative;
+    top: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.post{
+    background-color: rgb(238, 236, 236);
+    box-shadow: -15px 15px 19px rgba(52, 52, 52, 0.575);
+    height: 1000px;
+    width: 700px;
+    position: relative;
+    margin-top: -50vw;
+    left: -0vw;
+    border-radius: 40px;
+    font-size: 25px;
+}
+.textboxuser{
+    position: relative;
+    top: 70px;
+    color: rgb(0, 0, 0);
+    text-shadow: 1px 2px 5px rgb(175, 175, 175);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+.btn-newPost{
+    appearance: none;
+    background-color: transparent;
+    border: 0.125em solid #1A1A1A;
+    border-radius: 0.9375em;
+    box-sizing: border-box;
+    color: #3B3B3B;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+    min-height: 3.75em;
+    min-width: 0;
+    outline: none;
+    padding: 1em 2.3em;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    will-change: transform;
+}
+
+.btn-newPost:disabled{
+    pointer-events: none;
+}
+
+.btn-newPost:hover{
+    color: #fff;
+    background-color: #1A1A1A;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+}
+
+.btn-newPost:active{
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+
+.BoxPostUser{
+    position: relative;
+    background-color: rgba(227, 226, 226, 0.6);
+    box-shadow: -10px 12px 20px rgb(163, 163, 163);
+    border: solid 1px rgba(0, 0, 0, 0.393);
+    top: 90px;
+    margin-top: 20px;
+    color: #000000;
+    font-weight: bold;
+}
