@@ -1,0 +1,36 @@
+.login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.loginForm{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 5vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginInput{
+    margin-bottom: 0.5rem;
+    height: 2rem;
+    width: 15rem;
+}
+
+.loginLabel{
+    font-size: 1rem;
+    text-align: left;
+}
+
+.loginButton{
+    width: 8rem;
+}
+
+.linkRegister{
+    text-decoration: none;
+    color: #0a66c2;
+}

@@ -45,8 +45,6 @@ function App() {
 
     <body>
 
-      
-
     <div class="TextBody">
       <div className='boxText'></div>
       <h3></h3>
@@ -70,10 +68,10 @@ function App() {
         </div>
     </footer>
 
-
     </body>
 
-        <Router />
+    
+    <Router />
         
 
   </div>    
