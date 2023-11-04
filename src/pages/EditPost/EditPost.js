@@ -1,12 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import axios from "axios";
+import { AppContext } from "../../App";
 
 const EditPost = () => {
   const { changeId } = useParams();
   const [changeMessage, setChangeMessage] = useState("");
   const [post, setPost] = useState(null);
   const navigate = useNavigate(); // Use useNavigate para navegação
+
+  const {token} = useContext(AppContext);
 
   console.log(post)
 
@@ -32,8 +35,12 @@ const EditPost = () => {
     console.log(changeMessage)
 
     try {
-      await axios.put(`http://localhost:8080/api/posts`, updatedPost);
-      navigate('/')
+      await axios.put(`http://localhost:8080/api/posts`, updatedPost, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+      navigate('/feed')
       // Redirecionar após a atualização (por exemplo, para a página do post)
     } catch (error) {
       console.error("Erro ao atualizar o post:", error);
@@ -61,7 +68,7 @@ const EditPost = () => {
         <p>Carregando post...</p>
       )}
       <div className='btn-back'>
-        <Link to='/'>
+        <Link to='/feed'>
           <button>Voltar para o feed</button>
         </Link>
       </div>

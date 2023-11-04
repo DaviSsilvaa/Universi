@@ -1,16 +1,19 @@
-import { Link } from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import './login.css'
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import axios from 'axios';
+import { AppContext } from "../../App";
 
 const Login = () => {
 
+    const navigate = useNavigate();
+
     const [login, setLogin] = useState("");
     const [senha, setSenha] = useState("");
-    const [token, setToken] = useState("");
+
+    const {setUsername, setToken} = useContext(AppContext);
 
     const handleLoginClick = (e) => {
-        //para evitar carregamento ao clicar no botão. Remover depois
         e.preventDefault();
         const info = {
             "login": login,
@@ -20,7 +23,8 @@ const Login = () => {
         axios.post("http://localhost:8080/auth/login", info)
         .then(response => {
             setToken(response.data.token);
-            console.log("Token:" + token);
+            setUsername(response.data.login);
+            navigate('/feed')
         })
         .catch(error => {
             console.error(error);

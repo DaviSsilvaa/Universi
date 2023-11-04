@@ -1,13 +1,13 @@
-import blogFetch from 'axios';
 import axios from "axios";
-import {useState} from "react";
+import {useState, useContext} from "react";
 import { Link, useNavigate } from 'react-router-dom'
 import './PostForms.css'
+import { AppContext } from '../../App';
 
 
 const PostForms = () => {
 
-//    const [postTitle, setPostTitle] = useState()
+    const {token} = useContext(AppContext);
     const [postMessage, setPostMessage] = useState()
     const navigate = useNavigate(); // Use useNavigate para navegação
 
@@ -15,10 +15,14 @@ const PostForms = () => {
         e.preventDefault();
 
         const post = {postMessage}
-        await axios.post('http://localhost:8080/api/posts', post)
+        await axios.post('http://localhost:8080/api/posts', post, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
         
         // Após a postagem bem-sucedida, redirecione para a página inicial
-        navigate('/');
+        navigate('/feed');
     }
 
     return (
