@@ -1,4 +1,5 @@
 import { useState, useEffect, useContext} from "react";
+import React from "react";
 import { Link } from 'react-router-dom';
 import axios from "axios";
 import './FeedAxios.css';
@@ -59,8 +60,14 @@ const FeedAxios= () => {
                     
                     <div className='BoxPostUser' key={post.id}>
                         <p>{post.user.login}</p>
-                        <p className="ContentPost">{post.message}</p>
-
+                        <div className="ContentPost">
+                            {post.message.split('\n').map((line, index) => (
+                                <React.Fragment key={index}>
+                                    {index > 0 && <br />}
+                                    {line}
+                                </React.Fragment>
+                            ))}
+                        </div>
                         {post.user.login === username && 
                         <div className="btns">
                             <div className="btn-edit">
