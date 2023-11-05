@@ -1,3 +1,30 @@
 .register{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: white;
+    margin-top: 15vh;
+}
+
+.registerForm{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 5vh;
+}
+
+.registerInput{
+    margin-bottom: 0.5rem;
+    height: 2rem;
+    width: 15rem;
+}
+
+.registerLabel{
+    font-size: 1rem;
+    text-align: left;
+}
+
+.registerButton{
+    width: 8rem;
 }
