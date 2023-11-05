@@ -30,7 +30,7 @@ const FeedAxios= () => {
     }, []);
 
     function deletePost(id) {
-        
+
         axios.delete(`http://localhost:8080/api/posts/${id}`, {
             headers: {
                 Authorization: `Bearer ${token}`
@@ -39,6 +39,8 @@ const FeedAxios= () => {
         setPost(post.filter(post => post._id !== id ))
         window.location.reload();
     }
+    
+    
 
     return (
         <div className="post">
@@ -55,6 +57,7 @@ const FeedAxios= () => {
             
             {post.length === 0 ? (<p className="textboxuser">Carregando...</p>) : (
                 post.map((post) => (
+                    
                     <div className='BoxPostUser' key={post.id}>
                         <p>{post.user.login}</p>
                         <p className="ContentPost">{post.message}</p>
@@ -68,7 +71,7 @@ const FeedAxios= () => {
                             </div>
 
                             <div className="btn-delete">
-                                <Link to='/'>
+                                <Link to='/feed'>
                                     <button onClick={() => deletePost(post.id) }>Deletar</button>
                                 </Link>
                             </div>
