@@ -21,7 +21,7 @@ const PostForms = () => {
             }
         })
         
-        // Após a postagem bem-sucedida, redirecione para a página inicial
+        // Após a postagem bem-sucedida, redirecione para a página inicialll
         navigate('/feed');
     }
 
