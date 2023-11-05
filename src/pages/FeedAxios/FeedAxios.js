@@ -30,11 +30,6 @@ const FeedAxios= () => {
     }, []);
 
     function deletePost(id) {
-<<<<<<< HEAD
-
-=======
-        
->>>>>>> caa7372c56b5a34c075f9d070f1dbb45ecbff678
         axios.delete(`http://localhost:8080/api/posts/${id}`, {
             headers: {
                 Authorization: `Bearer ${token}`
