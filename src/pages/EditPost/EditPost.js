@@ -16,7 +16,11 @@ const EditPost = () => {
   useEffect(() => {
     async function fetchPost() {
       try {
-        const response = await axios.get(`http://localhost:8080/api/posts/${changeId}`);
+        const response = await axios.get(`http://localhost:8080/api/posts/${changeId}`, {
+          headers: {
+            Authorization: `Bearer ${token}`
+        }
+        });
         setPost(response.data);
         setChangeMessage(response.data.message);
         console.log(response.data); // Aqui você pode acessar os dados da resposta
