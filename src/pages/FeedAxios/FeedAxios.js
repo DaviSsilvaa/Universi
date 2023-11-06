@@ -39,9 +39,16 @@ const FeedAxios = () => {
 
     function formatTextWithLineBreaks(text, maxLength) {
         let formattedText = '';
+        let cont = 0;
 
         for (let i = 0; i < text.length; i += maxLength) {
             formattedText += text.slice(i, i + maxLength) + '\n';
+            cont += 1
+
+            if(cont == 3) {
+                formattedText += '...'
+                break;
+            }
         }
 
         return formattedText;
