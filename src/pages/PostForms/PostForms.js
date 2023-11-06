@@ -40,7 +40,7 @@ const PostForms = () => {
             <input type='submit' value='criar post' className='button2'/>
         </form>
         <div className='btn-back'>
-            <Link to='/'>
+            <Link to='/feed'>
                 <button>Voltar para o feed</button>
             </Link>
         </div>
