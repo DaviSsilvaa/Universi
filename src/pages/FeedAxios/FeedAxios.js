@@ -12,7 +12,7 @@ const FeedAxios = () => {
 
     const getPosts = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/api/posts');
+            const response = await axios.get('https://feed-api-deploy.onrender.com/api/posts');
             const data = response.data;
             setPost(data);
         } catch (e) {
@@ -25,7 +25,7 @@ const FeedAxios = () => {
     }, []);
 
     function deletePost(id) {
-        axios.delete(`http://localhost:8080/api/posts/${id}`, {
+        axios.delete(`https://feed-api-deploy.onrender.com/api/posts/${id}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -60,10 +60,10 @@ const FeedAxios = () => {
         let cont = 0;
 
         for (let i = 0; i < text.length; i += maxLength) {
-            formattedText += text.slice(i, i + maxLength) + '\n';
+            formattedText += text.slice(i, i + maxLength);
             cont += 1
 
-            if(cont == 3) {
+            if (text.length >= 129 && cont >= 3) {
                 formattedText += '...'
                 break;
             }
@@ -71,6 +71,12 @@ const FeedAxios = () => {
 
         return formattedText;
     }
+
+    const toggleReadMore = (index) => {
+        const newPosts = [...post];
+        newPosts[index].showFullContent = !newPosts[index].showFullContent;
+        setPost(newPosts);
+    };
 
     return (
         <div className="post">
@@ -84,17 +90,22 @@ const FeedAxios = () => {
             {post.length === 0 ? (
                 <p className="textboxuser">Carregando...</p>
             ) : (
-                post.map((p) => (
+                post.map((p, index) => (
                     <div className='BoxPostUser' key={p.id}>
                         <p>{p.user.login}</p>
                         <div className="ContentPost">
-                            {formatTextWithLineBreaks(p.message, 47).split('\n').map((line, index) => (
-                                <React.Fragment key={index}>
-                                    {index > 0 && <br />}
+                            {p.showFullContent ? p.message.split('\n').map((line, i) => (
+                                <React.Fragment key={i}>
                                     {line}
+                                    <br />
                                 </React.Fragment>
-                            ))}
+                            )) : formatTextWithLineBreaks(p.message, 45)}
                         </div>
+                        {p.message.length >= 137 && (
+                            <button onClick={() => toggleReadMore(index)}>
+                                {p.showFullContent ? "Ler menos" : "Ler mais"}
+                            </button>
+                        )}
                         {p.user.login === username &&
                             <div className="btns">
                                 <div className="btn-edit">

@@ -21,7 +21,6 @@
     width: 600px;
 
     border-radius: 7px;
-    margin-top: 40px;
 }
 
 .btns {
@@ -93,8 +92,7 @@
     position: relative;
     background-color: rgb(210, 210, 210);
     border-radius: 45px;
-    height: 300px;
-    
+    height: auto;
 }
 
 
@@ -103,6 +101,8 @@
         position: relative;
         top: 20px;
         bottom: 40px;
+        padding-left: 4rem;
+        padding-right: 4rem;
         font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
 
@@ -119,6 +119,7 @@
         font-size: 25px;
         padding: 50px;
         overflow: -moz-hidden-unscrollable;
+        word-wrap: break-word;
     }
 
 
@@ -131,6 +132,7 @@
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         margin: 10px 0; /* Espaçamento entre os posts */
         padding: 10px; /* Adicione preenchimento conforme necessário */
+        height: auto;
     }
 
 

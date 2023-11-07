@@ -15,7 +15,7 @@ const PostForms = () => {
         e.preventDefault();
 
         const post = {postMessage}
-        await axios.post('http://localhost:8080/api/posts', post, {
+        await axios.post('https://feed-api-deploy.onrender.com/api/posts', post, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
