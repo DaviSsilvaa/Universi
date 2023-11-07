@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useRef } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import './FeedAxios.css';
@@ -23,6 +23,8 @@ const FeedAxios = () => {
     useEffect(() => {
         getPosts();
     }, []);
+
+    
 
     function deletePost(id) {
         axios.delete(`http://localhost:8080/api/posts/${id}`, {
@@ -55,15 +57,16 @@ const FeedAxios = () => {
     }
 
 
+
     function formatTextWithLineBreaks(text, maxLength) {
         let formattedText = '';
         let cont = 0;
 
         for (let i = 0; i < text.length; i += maxLength) {
-            formattedText += text.slice(i, i + maxLength) + '\n';
+            formattedText += text.slice(i, i + maxLength);
             cont += 1
 
-            if(cont == 3) {
+            if (text.length >= 129 && cont >= 3) {
                 formattedText += '...'
                 break;
             }
@@ -72,8 +75,14 @@ const FeedAxios = () => {
         return formattedText;
     }
 
+    const toggleReadMore = (index) => {
+        const newPosts = [...post];
+        newPosts[index].showFullContent = !newPosts[index].showFullContent;
+        setPost(newPosts);
+    };
+
     return (
-        <div className="post">
+        <div className="post" >
             <p>Bem vindo, {username}</p>
             <div className="boxPosts"></div>
             <div className="">
@@ -81,37 +90,56 @@ const FeedAxios = () => {
                     <button className="btn-newPost">Nova Publicação</button>
                 </Link>
             </div>
-            {post.length === 0 ? (
-                <p className="textboxuser">Carregando...</p>
-            ) : (
-                post.map((p) => (
-                    <div className='BoxPostUser' key={p.id}>
-                        <p>{p.user.login}</p>
-                        <div className="ContentPost">
-                            {formatTextWithLineBreaks(p.message, 47).split('\n').map((line, index) => (
-                                <React.Fragment key={index}>
-                                    {index > 0 && <br />}
-                                    {line}
-                                </React.Fragment>
-                            ))}
-                        </div>
-                        {p.user.login === username &&
-                            <div className="btns">
-                                <div className="btn-edit">
-                                    <Link to={{ pathname: `/edit/${p.id}` }}>
-                                        <button>Editar</button>
-                                    </Link>
-                                </div>
-                                <div className="btn-delete">
-                                    <Link to='/feed'>
-                                        <button onClick={() => handleClick(p)}>Deletar</button>
-                                    </Link>
+            <div>
+                {post.length === 0 ? (
+                    <p className="textboxuser">Carregando...</p>
+                ) : (
+                    post.map((p, index) => (
+                        <div className='BoxPostUser' key={p.id} >
+                            <p>{p.user.login}</p>
+                            <div className="ContentPost">
+                                {p.showFullContent ? p.message.split('\n').map((line, i) => (
+                                    <React.Fragment key={i}>
+                                        {line}
+                                        <br />
+                                    </React.Fragment>
+                                )) : formatTextWithLineBreaks(p.message, 45)}
+                                <div className='btn-LerMais'>
+                                        {p.message.length >= 129 && (
+                                            <button onClick={() => toggleReadMore(index)}>
+                                                {p.showFullContent ? "Ler menos" : "Ler mais"}
+                                            </button>
+                                        )}
                                 </div>
                             </div>
-                        }
-                    </div>
-                ))
-            )}
+                            
+                                <div className="btns">
+                                    {p.user.login === username &&
+                                        <div className="btn-edit">
+                                            <Link to={{ pathname: `/edit/${p.id}` }}>
+                                                <button>Editar</button>
+                                            </Link>
+                                        </div>
+                                    }
+                                    
+                                    {p.user.login === username &&
+                                        <div className="btn-delete">
+                                            <Link to='/feed'>
+                                                <button onClick={() => handleClick(p)}>Deletar</button>
+                                            </Link>
+                                        </div>
+                                    }
+                                </div>
+                            
+                            <div className="btns">
+                            
+                            </div>
+                            
+                        </div>
+                    ))
+                )}
+            </div>
+            
         </div>
     );
 };
