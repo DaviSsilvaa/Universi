@@ -81,18 +81,22 @@ const FeedAxios = () => {
     return (
         <div className="post">
             <p>Bem vindo, {username}</p>
-            <div className="boxPosts"></div>
-            <div className="">
-                <Link to='/post'>
-                    <button className="btn-newPost">Nova Publicação</button>
-                </Link>
-            </div>
+            
+            
+            <Link to='/post'>
+                <button className="btn-newPost">Nova Publicação</button>
+            </Link>
+            
+
             {post.length === 0 ? (
                 <p className="textboxuser">Carregando...</p>
             ) : (
                 post.map((p, index) => (
+
                     <div className='BoxPostUser' key={p.id}>
+
                         <p>{p.user.login}</p>
+
                         <div className="ContentPost">
                             {p.showFullContent ? p.message.split('\n').map((line, i) => (
                                 <React.Fragment key={i}>
@@ -101,12 +105,14 @@ const FeedAxios = () => {
                                 </React.Fragment>
                             )) : formatTextWithLineBreaks(p.message, 45)}
                         </div>
+
                         {p.message.length >= 137 && (
                             <button onClick={() => toggleReadMore(index)}>
                                 {p.showFullContent ? "Ler menos" : "Ler mais"}
                             </button>
                         )}
                         {p.user.login === username &&
+                        
                             <div className="btns">
                                 <div className="btn-edit">
                                     <Link to={{ pathname: `/edit/${p.id}` }}>

@@ -56,11 +56,7 @@ const Menu = () => {
             <div className='BoxUser'></div>
 
 
-            <footer className='footeer'>
-                <div class="container">
-                    <p>&copy; 2023 Seu Site. Todos os direitos reservados.</p>
-                </div>
-            </footer>
+            
 
         </div>
     )

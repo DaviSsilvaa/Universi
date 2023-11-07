@@ -26,6 +26,12 @@ function App() {
         <Menu />
         <Router />
       </AppContext.Provider>
+
+      <footer className='footeer'>
+        <div class="container">
+          <p>&copy; 2023 Seu Site. Todos os direitos reservados.</p>
+        </div>
+      </footer>
     </div>    
   );
 }
