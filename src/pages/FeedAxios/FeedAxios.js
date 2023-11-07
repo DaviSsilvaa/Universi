@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import './FeedAxios.css';
+import Swal from 'sweetalert2';
 import { AppContext } from "../../App";
 
 const FeedAxios = () => {
@@ -36,6 +37,23 @@ const FeedAxios = () => {
                 console.log("Erro ao excluir post:", error);
             });
     }
+
+    const handleClick = (post) => {
+        Swal.fire({
+            title: 'Você tem certeza que quer apagar o post?',
+            text: "Você não poderá reveter isso!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sim, apague o post!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+                deletePost(post.id);
+            }
+          })
+    }
+
 
     function formatTextWithLineBreaks(text, maxLength) {
         let formattedText = '';
@@ -86,7 +104,7 @@ const FeedAxios = () => {
                                 </div>
                                 <div className="btn-delete">
                                     <Link to='/feed'>
-                                        <button onClick={() => deletePost(p.id)}>Deletar</button>
+                                        <button onClick={() => handleClick(p)}>Deletar</button>
                                     </Link>
                                 </div>
                             </div>
