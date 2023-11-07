@@ -20,7 +20,7 @@ const Login = () => {
             "senha": senha
         };
 
-        axios.post("http://localhost:8080/auth/login", info)
+        axios.post("https://feed-api-deploy.onrender.com/auth/login", info)
         .then(response => {
             setToken(response.data.token);
             setUsername(response.data.login);

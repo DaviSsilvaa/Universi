@@ -12,7 +12,7 @@ const FeedAxios = () => {
 
     const getPosts = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/api/posts');
+            const response = await axios.get('https://feed-api-deploy.onrender.com/api/posts');
             const data = response.data;
             setPost(data);
         } catch (e) {
@@ -25,7 +25,7 @@ const FeedAxios = () => {
     }, []);
 
     function deletePost(id) {
-        axios.delete(`http://localhost:8080/api/posts/${id}`, {
+        axios.delete(`https://feed-api-deploy.onrender.com/api/posts/${id}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
