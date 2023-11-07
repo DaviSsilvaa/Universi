@@ -27,24 +27,24 @@ const PostForms = () => {
 
     return (
         <div className="new-post">
-        <h2>Comente sobre algo</h2>
-        <form onSubmit={(e) => creatPost(e)}>
-            <div className = 'forms-control'>
-                <label htmlFor='text'>Mensagem</label>
-                <textarea id='text'
-                          name='text'
-                          placeholder='Digite a mensagem'
-                          onChange={(e) => setPostMessage(e.target.value)}
-                />
+            <h2>Comente sobre algo</h2>
+            <form onSubmit={(e) => creatPost(e)}>
+                <div className = 'forms-control'>
+                    <label htmlFor='text'>Mensagem</label>
+                    <textarea id='text'
+                            name='text'
+                            placeholder='Digite a mensagem'
+                            onChange={(e) => setPostMessage(e.target.value)}
+                    />
+                </div>
+                <input type='submit' value='criar post' className='button2'/>
+            </form>
+            <div className='btn-back'>
+                <Link to='/feed'>
+                    <button>Voltar para o feed</button>
+                </Link>
             </div>
-            <input type='submit' value='criar post' className='button2'/>
-        </form>
-        <div className='btn-back'>
-            <Link to='/feed'>
-                <button>Voltar para o feed</button>
-            </Link>
         </div>
-    </div>
     )
 }
 
