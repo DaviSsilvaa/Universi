@@ -110,7 +110,7 @@ const FeedAxios = () => {
                                                 {p.showFullContent ? "Ler menos" : "Ler mais"}
                                             </button>
                                         )}
-                                </div>
+                                    </div>
                             </div>
                             
                                 <div className="btns">
