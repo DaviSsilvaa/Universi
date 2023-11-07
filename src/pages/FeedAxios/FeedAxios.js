@@ -111,8 +111,9 @@ const FeedAxios = () => {
                                 {p.showFullContent ? "Ler menos" : "Ler mais"}
                             </button>
                         )}
+
                         {p.user.login === username &&
-                        
+
                             <div className="btns">
                                 <div className="btn-edit">
                                     <Link to={{ pathname: `/edit/${p.id}` }}>
