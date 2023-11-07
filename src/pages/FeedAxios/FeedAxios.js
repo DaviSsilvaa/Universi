@@ -60,7 +60,7 @@ const FeedAxios = () => {
         let cont = 0;
 
         for (let i = 0; i < text.length; i += maxLength) {
-            formattedText += text.slice(i, i + maxLength) + '\n';
+            formattedText += text.slice(i, i + maxLength);
             cont += 1
 
             if (text.length >= 129 && cont >= 3) {
