@@ -14,7 +14,7 @@ const Menu = () => {
                 <input class="inputBox" id="inputBox" type="text" placeholder="Pesquise no Universi"></input>
             </div>
 
-
+            
             <nav id='menu'>
                 <input type='checkbox' id='responsive-menu' onClick='updatemenu()'/>
                 <ul>
@@ -25,18 +25,18 @@ const Menu = () => {
                     <li><a href='http://'>Products 2</a></li>
                     <li><a href='http://'>Products 3</a></li>
                     <li><a href='http://'>Products 4</a></li>
-            </ul>
-                </li>
-                <li><a href='http://'>Sobre Nós</a></li>
-                <li><a class='dropdown-arrow' href='http://'>Serviços</a>
-                    <ul class='sub-menus'>
-                    <li><a href='http://'>Services 1</a></li>
-                    <li><a href='http://'>Services 2</a></li>
-                    <li><a href='http://'>Services 3</a></li>
-            </ul>
-                </li>
-                <li><a href='http://'>Contate-nos</a></li>
                 </ul>
+                    </li>
+                    <li><a href='http://'>Sobre Nós</a></li>
+                    <li><a class='dropdown-arrow' href='http://'>Serviços</a>
+                        <ul class='sub-menus'>
+                        <li><a href='http://'>Services 1</a></li>
+                        <li><a href='http://'>Services 2</a></li>
+                        <li><a href='http://'>Services 3</a></li>
+                </ul>
+                    </li>
+                    <li><a href='http://'>Contate-nos</a></li>
+                    </ul>
             </nav>
 
             <header className="App-header">
