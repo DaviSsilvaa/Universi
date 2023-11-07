@@ -63,7 +63,7 @@ const FeedAxios = () => {
             formattedText += text.slice(i, i + maxLength) + '\n';
             cont += 1
 
-            if(cont == 3) {
+            if (text.length >= 129 && cont >= 3) {
                 formattedText += '...'
                 break;
             }
@@ -88,12 +88,12 @@ const FeedAxios = () => {
                     <div className='BoxPostUser' key={p.id}>
                         <p>{p.user.login}</p>
                         <div className="ContentPost">
-                            {formatTextWithLineBreaks(p.message, 47).split('\n').map((line, index) => (
-                                <React.Fragment key={index}>
-                                    {index > 0 && <br />}
+                            {p.showFullContent ? p.message.split('\n').map((line, i) => (
+                                <React.Fragment key={i}>
                                     {line}
+                                    <br />
                                 </React.Fragment>
-                            ))}
+                            )) : formatTextWithLineBreaks(p.message, 45)}
                         </div>
                         {p.user.login === username &&
                             <div className="btns">
