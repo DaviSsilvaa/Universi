@@ -16,7 +16,7 @@ const EditPost = () => {
   useEffect(() => {
     async function fetchPost() {
       try {
-        const response = await axios.get(`http://localhost:8080/api/posts/${changeId}`, {
+        const response = await axios.get(`https://feed-api-deploy.onrender.com/api/posts/${changeId}`, {
           headers: {
             Authorization: `Bearer ${token}`
         }
@@ -39,7 +39,7 @@ const EditPost = () => {
     console.log(changeMessage)
 
     try {
-      await axios.put(`http://localhost:8080/api/posts`, updatedPost, {
+      await axios.put(`https://feed-api-deploy.onrender.com/api/posts`, updatedPost, {
         headers: {
           Authorization: `Bearer ${token}`
         }
