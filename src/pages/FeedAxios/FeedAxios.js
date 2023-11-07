@@ -72,6 +72,12 @@ const FeedAxios = () => {
         return formattedText;
     }
 
+    const toggleReadMore = (index) => {
+        const newPosts = [...post];
+        newPosts[index].showFullContent = !newPosts[index].showFullContent;
+        setPost(newPosts);
+    };
+
     return (
         <div className="post">
             <p>Bem vindo, {username}</p>
@@ -84,7 +90,7 @@ const FeedAxios = () => {
             {post.length === 0 ? (
                 <p className="textboxuser">Carregando...</p>
             ) : (
-                post.map((p) => (
+                post.map((p, index) => (
                     <div className='BoxPostUser' key={p.id}>
                         <p>{p.user.login}</p>
                         <div className="ContentPost">
@@ -95,6 +101,11 @@ const FeedAxios = () => {
                                 </React.Fragment>
                             )) : formatTextWithLineBreaks(p.message, 45)}
                         </div>
+                        {p.message.length >= 137 && (
+                            <button onClick={() => toggleReadMore(index)}>
+                                {p.showFullContent ? "Ler menos" : "Ler mais"}
+                            </button>
+                        )}
                         {p.user.login === username &&
                             <div className="btns">
                                 <div className="btn-edit">
