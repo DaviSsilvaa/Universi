@@ -22,7 +22,7 @@ const Register = () => {
         };
       
         // Envie os dados do usuário para o servidor (usando Axios, como no seu componente de login)
-        axios.post("http://localhost:8080/auth/register", userData)
+        axios.post("https://feed-api-deploy.onrender.com/auth/register", userData)
           .then(response => {
             setMessage('Usuário registrado com sucesso');
             // Você pode redirecionar o usuário para a página de login ou outra página, se desejar
