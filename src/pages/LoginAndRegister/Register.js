@@ -22,7 +22,7 @@ const Register = () => {
         };
       
         // Envie os dados do usuário para o servidor (usando Axios, como no seu componente de login)
-        axios.post("http://localhost:8080/auth/register", userData)
+        axios.post("https://feed-api-deploy.onrender.com/auth/register", userData)
           .then(response => {
             setMessage('Usuário registrado com sucesso');
             // Você pode redirecionar o usuário para a página de login ou outra página, se desejar
@@ -37,7 +37,7 @@ const Register = () => {
     return (
         
         <div className='register'>
-            <h1>Realizar Cadastro</h1>
+            <h1 className='TextRegister'>Cadastro</h1>
 
             <form className='registerForm'>
                 <label htmlFor='login' className='registerLabel'>Nome de usuário</label>
@@ -53,7 +53,7 @@ const Register = () => {
             </form>
             <div className='btn-back'>
                 <Link to='/'>
-                    <button>Voltar para Login</button>
+                    <button className='buttonback'>Voltar para Login</button>
                 </Link>
             </div>
 
