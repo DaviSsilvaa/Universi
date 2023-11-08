@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 import axios from 'axios';
+import Swal from 'sweetalert2';
 import './register.css'
 
 const Register = () => {
@@ -26,13 +27,22 @@ const Register = () => {
           .then(response => {
             setMessage('Usuário registrado com sucesso');
             // Você pode redirecionar o usuário para a página de login ou outra página, se desejar
-            navigate('/')
+            navigate('/');
+            viewClick();
           })
           .catch(error => {
             setMessage('Erro ao registrar o usuário. Tente novamente mais tarde.');
             console.error(error);
           });
       };
+
+      const viewClick = () => {
+        Swal.fire({
+          icon: "success",
+          title: "Usuário registrado com sucesso",
+          showConfirmButton: true
+        });
+      }
 
     return (
         
