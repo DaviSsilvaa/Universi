@@ -32,6 +32,8 @@ const Register = () => {
           })
           .catch(error => {
             setMessage('Erro ao registrar o usuário. Tente novamente mais tarde.');
+            navigate('/');
+            viewFailClick();
             console.error(error);
           });
       };
@@ -40,6 +42,14 @@ const Register = () => {
         Swal.fire({
           icon: "success",
           title: "Usuário registrado com sucesso",
+          showConfirmButton: true
+        });
+      }
+
+      const viewFailClick = () => {
+        Swal.fire({
+          icon: "error",
+          title: "Erro ao registrar o usuário. Tente novamente mais tarde.",
           showConfirmButton: true
         });
       }
