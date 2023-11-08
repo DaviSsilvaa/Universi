@@ -3,6 +3,7 @@ import './login.css'
 import { useContext, useState } from 'react';
 import axios from 'axios';
 import { AppContext } from "../../App";
+import Swal from 'sweetalert2';
 
 const Login = () => {
 
@@ -27,15 +28,25 @@ const Login = () => {
             navigate('/feed')
         })
         .catch(error => {
+            viewFailClick();
             console.error(error);
             console.log(info);
         })
     }
+    const viewFailClick = () => {
+        Swal.fire({
+          icon: "error",
+          title: "Usuário não cadastrado.",
+          showConfirmButton: true
+        });
+      }
+
 
     return (
         
         <div className='login'>
-            <h1>Realizar login</h1>
+            <h1 class='TextLogin'>Bem-Vindo de Volta</h1>
+
 
             <form className='loginForm'>
             <label htmlFor='login' className='loginLabel'>Nome de usuário</label>

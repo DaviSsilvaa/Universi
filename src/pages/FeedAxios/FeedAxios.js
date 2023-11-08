@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useRef } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import './FeedAxios.css';
@@ -23,6 +23,8 @@ const FeedAxios = () => {
     useEffect(() => {
         getPosts();
     }, []);
+
+    
 
     function deletePost(id) {
         axios.delete(`https://feed-api-deploy.onrender.com/api/posts/${id}`, {
@@ -53,6 +55,7 @@ const FeedAxios = () => {
             }
           })
     }
+
 
 
     function formatTextWithLineBreaks(text, maxLength) {
