@@ -47,7 +47,10 @@ const Register = () => {
                 <input type='password' id='senha' className='registerInput' onChange={(e) => setSenha(e.target.value)}/>
 
                 <label htmlFor='role' className='registerLabel'>Função</label>
-                <input type='text' id='role' className='registerInput' onChange={(e) => setRole(e.target.value)}/>
+                <select id='role' className='registerInput' onChange={(e) => setRole(e.target.value)}>
+                    <option value='USER'>USER</option>
+                    <option value='ADMIN'>ADMIN</option>
+                </select>
 
                 <button type='submit' className='registerButton' onClick={(e) => handleRegisterClick(e)}>Registrar</button>
             </form>
